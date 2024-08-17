@@ -113,19 +113,7 @@ header{
 header .menu ul li a{
     color: var(--secondary-color);
     padding:10px;
-}
-header .menu ul li a i{
-    font-size: var(--fs-14);
-    transition: 0.5s;
-}
-header .menu ul li:first-child a{
-    color:var(--primary-color);
-}
-header .menu ul li:last-child a{
-    border: 1px solid var(--primary-color);
-    padding: 12px 24px;
-    color:var(--primary-color);
-    border-radius: 7px;
+    margin-left: 20px;
 }
 .py-12{
     padding: 12px 0;
@@ -146,7 +134,66 @@ header .menu ul li:last-child a{
 .items-center{
     align-items: center;
 }
+header .menu ul li{
+    position: relative;
+}
+header .menu ul li .dropdown{
+    position: absolute;
+    width: 240px;
+    background-color: aliceblue; 
+    z-index: 11111;
+    top: 30px;
+    border-radius: 8px; opacity: 0;
+    visibility: hidden;
+} 
+header .menu ul li .dropdown ul li a{
+    margin: 0;
+    color: black;
+}
+header .menu ul li .dropdown ul li{
+    padding: 9px 15px;
+}
+header .menu ul li .dropdown ul li:hover{
+    background-color: #80808030;
+}
+header .menu ul li a i{
+    margin: 4px;
+}
+header .menu ul li:hover .dropdown{
+    opacity: 1;
+    visibility: visible;
+}
 header .menu ul li a:hover{
+    color: var(--primary-color);
+}
+header .menu button{
+    border: 1px solid var(--primary-color); 
+    padding: 13px 24px; background-color: transparent;
+    border-radius: 7px; cursor: pointer;
+    color: var(--primary-color); transition: 0.3s;
+    margin-left: 15px; font-size: 14px;
+}
+header .menu button:hover{
+    background-color: var(--primary-color);
+    color: black;
+}
+header .menu ul li:first-child a{
+    color: var(--primary-color);
+}
+/* header .menu ul li a i{
+    font-size: var(--fs-14);
+    transition: 0.5s;
+} */
+/* header .menu ul li:first-child a{
+    color:var(--primary-color);
+} */
+/* header .menu ul li:last-child a{
+    border: 1px solid var(--primary-color);
+    padding: 12px 24px;
+    color:var(--primary-color);
+    border-radius: 7px;
+} */
+/* header .menu ul li a:hover{
     transition: 0.5s;
     color: var(--primary-color);
 }
@@ -154,62 +201,65 @@ header .menu ul li:last-child a:hover{
     background-color: var(--primary-color);
     color: var(--black-color);
     transition: 0.5s;
-}
-header .menu ul li .drop-down{
+} */
+/* header .menu ul li .drop-down{
     position: absolute; 
+    background-color: aliceblue;
     visibility: hidden;
     opacity: 0;
-    transition: 1px; 
-}
-header .menu ul li .drop-down ol li a{
+    z-index: 111;
+    border-radius: 8px;
+    padding: 10px 10px;
+} */
+/* header .menu ul li .drop-down ul li a{
     color:var(--secondary-color);
     margin:0;
     padding: 4px 16px;
-}
-header .menu ul li:first-child a{
+} */
+/* header .menu ul li:first-child a{
     color: var(--primary-color);
-}
-header .menu ul li:last-child{
+} */
+/* header .menu ul li:last-child{
     padding:0;
     border: 0px solid var(--primary-color);
     color:var(--primary-color);
     border-radius: 8px;
-}
-header .menu ul li:last-child a:hover{
+} */
+/* header .menu ul li:last-child a:hover{
     background-color:var(--primary-color);
     color: var(--black-color);
-}
-header .menu ul li a:hover{
+} */
+/* header .menu ul li a:hover{
     color:var(--primary-color);
    
-}
-header .menu ul li .drop-down ol li a{
+} */
+/* header .menu ul li .drop-down ul li a{
    margin-left: 0;
    color: var(--secondary-color);
 
-}
-header .menu ul li .drop-down ol li:last-child a{
+} */
+/* header .menu ul li .drop-down ul li:last-child a{
     color: var(--secondary-color);
     border-radius: 0;
     border: 0;
     background-color: transparent;
-}
-header .menu ul li .drop-down ol li a:hover{
+} */
+/* header .menu ul li .drop-down ul li a:hover{
     color: var(--primary-color);
 }
-header .menu ul li .drop-down ol{
+header .menu ul li .drop-down ul{
     border: 1px solid #3f3f3fd0;
     background-color: #11121c;
     border-radius: 8px;
 }
-header .menu ul li:hover .drop-down ol li{
+header .menu ul li:hover .drop-down ul li{
     padding: 4px 16px;
 }
 header .menu ul li:hover .drop-down{
     opacity:1;
     visibility: visible;
     top: 70px;
-}
+} */
 /* header end */
 /* banner start */
 .banner{
@@ -698,18 +748,28 @@ header .menu ul li:hover .drop-down{
 }
 .footer .footer-content .email form input{
     height: 50px;
-    width:80%;
+    width:100%;
     background-color: #11121c;
     border:1px solid rgb(68, 64, 64);
     font-size: var(--fs-16);
-    border-radius:8px;
+    border-radius:8px; margin: 10px 0 30px;
+    color: #fff; padding: 0 10px;
 }
 .footer .footer-content .email form i{
     background-color: var(--primary-color);
+    position: absolute;
+    top: 10px;
+    font-size: 17px;
+    right: 0;
     color:var(--black-color);
     border-radius:0 8px 8px 0;
     width:50px;
     height:50px;
+    display: flex;
+    justify-content: center; align-items: center;
+}
+.footer .footer-content .email form {
+    position: relative;
 }
 .footer .footer-content .social-icon a svg{
     width:20px;
